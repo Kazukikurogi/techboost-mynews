@@ -10,7 +10,10 @@ use App\News;
 class NewsController extends Controller
 {
     public function index(Request $request)
+    
     {
+        \Log::info(“一覧取得“);
+      
         $posts = News::all()->sortByDesc('updated_at');
 
         if (count($posts) > 0) {
