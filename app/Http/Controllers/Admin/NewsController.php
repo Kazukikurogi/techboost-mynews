@@ -25,8 +25,6 @@ class NewsController extends Controller
       $news = new News;
       $form = $request->all();
       
-      \Log::debug($path);
-      
       // フォームから画像が送信されてきたら、保存して、$news->image_pathに画像のパスを保存する
     if (isset($form['image'])) {
         $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
@@ -88,6 +86,7 @@ class NewsController extends Controller
         } else {
             $news_form['image_path'] = $news->image_path;
       }
+      
       unset($news_form['_token']);
       unset($news_form['image']);
       unset($news_form['remove']);
