@@ -26,8 +26,8 @@ class NewsController extends Controller
       $form = $request->all();
       
       // フォームから画像が送信されてきたら、保存して、$news->image_pathに画像のパスを保存する
-    if (isset($form['image'])) {
-        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+    if (isset($form['image_path'])) {
+        $path = Storage::disk('s3')->putFile('/',$form['image_path'],'public');
         $news->image_path = Storage::disk('s3')->url($path);
       } else {
           $news->image_path = null;
@@ -80,8 +80,8 @@ class NewsController extends Controller
       //以下17の編集履歴の記録と参照で変更
       if ($request->remove == 'true') {
             $news_form['image_path'] = null;
-        } elseif ($request->file('image')) {
-            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        } elseif ($request->file('image_path')) {
+            $path = Storage::disk('s3')->putFile('/',$news_form['image_path'],'public');
             $news->image_path = Storage::disk('s3')->url($path);
         } else {
             $news_form['image_path'] = $news->image_path;
