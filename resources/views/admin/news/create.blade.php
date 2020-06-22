@@ -40,7 +40,6 @@
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary" value="更新">
-                    <meta name="csrf-token" content="{{ csrf_token() }}">
                     @csrf
                 </form>
             </div>
