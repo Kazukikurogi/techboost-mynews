@@ -17,20 +17,16 @@ class ProfileController extends Controller
 
     public function create(Request $request)
     {
-        //以下を追記
         $this->validate($request, Profile::$rules);
         
         $profile = new Profile;
         $form = $request->all();
         
-        // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         
-        // データベースに保存する
         $profile->fill($form);
         $profile->save();
         
-        // admin/profileにリダイレクトする
         return redirect('admin/profile');
     }
         public function index(Request $request)
@@ -58,13 +54,14 @@ class ProfileController extends Controller
     {
       // Validationをかける
       $this->validate($request, Profile::$rules);
-      // Plofile Modelからデータを取得する
+      // Profile Modelからデータを取得する
       $profile = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
     
       
       unset($profile_form['_token']);
+      unset($profile_form['remove']);
       // 該当するデータを上書きして保存する
       $profile->fill($profile_form)->save();
       

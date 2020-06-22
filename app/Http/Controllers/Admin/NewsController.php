@@ -14,11 +14,9 @@ class NewsController extends Controller
   {
       return view('admin.news.create');
   }
-  
-     // 以下を追記
+ 
   public function create(Request $request)
   {
-      // 以下を追記
       // Varidationを行う
       $this->validate($request, News::$rules);
       
