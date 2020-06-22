@@ -39,13 +39,13 @@
                     <div class="form-group row">
                         <label class="col-md-2" for=hobby>趣味</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
+                            <input type="text" class="form-control" name="hobby" value="{{ $profile_form->hobby }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="introduction">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
+                            <textarea class="form-control" name="introduction" value="{{ $profile_form->introduction }}"rows="20"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
