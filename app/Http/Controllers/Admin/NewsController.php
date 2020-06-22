@@ -26,8 +26,8 @@ class NewsController extends Controller
       $form = $request->all();
       
       // フォームから画像が送信されてきたら、保存して、$news->image_pathに画像のパスを保存する
-    if (isset($form['image_path'])) {
-        $path = Storage::disk('s3')->putFile('/',$form['image_path'],'public');
+    if (isset($form['image'])) {
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
         $news->image_path = Storage::disk('s3')->url($path);
       } else {
           $news->image_path = null;
@@ -76,22 +76,22 @@ class NewsController extends Controller
       // News Modelからデータを取得する
       $news = News::find($request->id);
       // 送信されてきたフォームデータを格納する
-      $news_form = $request->all();
+      $form = $request->all();
       //以下17の編集履歴の記録と参照で変更
       if ($request->remove == 'true') {
             $news_form['image_path'] = null;
-        } elseif ($request->file('image_path')) {
-            $path = Storage::disk('s3')->putFile('/',$news_form['image_path'],'public');
+        } elseif ($request->file('image')) {
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
             $news->image_path = Storage::disk('s3')->url($path);
         } else {
             $news_form['image_path'] = $news->image_path;
       }
       
-      unset($news_form['_token']);
-      unset($news_form['image']);
-      unset($news_form['remove']);
+      unset($form['_token']);
+      unset($form['image']);
+      unset($form['remove']);
       // 該当するデータを上書きして保存する
-      $news->fill($news_form)->save();
+      $news->fill($form)->save();
       
       // 以下を追記
         $history = new History;
