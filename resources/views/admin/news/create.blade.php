@@ -14,7 +14,6 @@
             <div class="col-md-8 mx-auto">
                 <h2>ニュース新規作成</h2>
                 <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
-                    @csrf
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -41,6 +40,8 @@
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary" value="更新">
+                    <meta name="csrf-token" content="{{ csrf_token() }}">
+                    @csrf
                 </form>
             </div>
         </div>
