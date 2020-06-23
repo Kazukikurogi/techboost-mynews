@@ -20,21 +20,18 @@
                             <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
                         </div>
                     </div>
-                    <div class="form-group row">
+                   <div class="form-group row">
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10">
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
-                                    @if($val->id === $profile_form->gender
-                                        <option
+                                    <option
                                         class="form-control"
-                                        value="{{ $key->id }}"selected
-                                        >{{ $val->gender }}
-                                        </option>
-                                    @else
-                                        <option value="{{ $val->id }}">{{ $val->name }}</option>
-                                    @endif
+                                        value="{{ $key }}"
+                                    >
+                                        {{ $val }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
