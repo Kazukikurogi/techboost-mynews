@@ -24,14 +24,13 @@
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10">
                             <select name="gender" id="gender">
-                                <input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
                                     <option
                                         class="form-control"
                                         value="{{ $key }}"
                                     >
-                                        {{ $val }}
+                                        {{ $val->$profile_form->gender }}
                                     </option>
                                 @endforeach
                             </select>
