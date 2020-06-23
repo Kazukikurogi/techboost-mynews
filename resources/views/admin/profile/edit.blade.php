@@ -26,12 +26,15 @@
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
-                                    <option
+                                    @if($val->id === $profile_form->gender
+                                        <option
                                         class="form-control"
-                                        value="{{ $key }}"
-                                    >
-                                        {{ $val }}
-                                    </option>
+                                        value="{{ $key->id }}"selected
+                                        >{{ $val->gender }}
+                                        </option>
+                                    @else
+                                        <option value="{{ $val->id }}">{{ $val->name }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
