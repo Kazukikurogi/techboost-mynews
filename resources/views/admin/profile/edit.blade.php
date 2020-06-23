@@ -26,15 +26,15 @@
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
-                                @if($request->gender ==$key->gender) || old(gender) == $profile_form->gender )
+                                @if($request->gender ==$val->gender) || old(gender) == $profile_form->gender )
                                     <option
                                         class="form-control"
-                                        value="{{ $key->gender }}" selected>{{ $key->gender }}
+                                        value="{{ $val->gender }}" selected>{{ $val->gender }}
                                     </option>
                                 @else
                                     <option
                                         class="form-control"
-                                        value="{{ $key->gender }}">{{ $key->gender}}</option>
+                                        value="{{ $val->gender }}">{{ $val->gender}}</option>
                                 @endif    
                                 @endforeach
                             </select>
