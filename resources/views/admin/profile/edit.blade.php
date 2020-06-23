@@ -25,10 +25,10 @@
                         <div class="col-md-10">
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
-                                @foreach (["男性","女性","その他"] as $profile_form => gender)
+                                @foreach (["男性","女性","その他"] as $profile_form => $val)
                                     <option
                                         class="form-control"
-                                        value="{{ $key }}"
+                                        value="{{ $profile_form->gender }}"
                                     >
                                         {{ $val }}
                                     </option>

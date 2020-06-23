@@ -32,6 +32,11 @@
                         <div class="col-md-10">
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
+                                @foreach (["男性","女性","その他"] as <div class="form-group row">
+                        <label class="col-md-2" for="gender">性別</label>
+                        <div class="col-md-10">
+                            <select name="gender" id="gender">
+                                <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
                                     <option
                                         class="form-control"
