@@ -26,6 +26,11 @@
                             <select name="gender" id="gender">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
+                                @if(!empty($request->gender) && $request->gender == $val->ID || old('gender') $online_type->ID )
+                                 <option value = "{{ $val->ID }}" selected>{{ $val->NAME }}</option>
+                                @else
+                                <option value = "{{ $val->ID }}">{{ $val->NAME }}</option>
+                                @endif
                                     <option
                                         class="form-control"
                                         value="{{ $key }}"
