@@ -30,7 +30,7 @@
                                         class="form-control"
                                         value="{{ $key }}"
                                     >
-                                        {{ $val->$profile_form->gender }}
+                                        {{ $val }}
                                     </option>
                                 @endforeach
                             </select>
