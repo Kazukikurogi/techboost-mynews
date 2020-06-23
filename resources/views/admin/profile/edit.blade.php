@@ -28,7 +28,7 @@
                                 @foreach (["男性","女性","その他"] as $key => $val)
                                     <option
                                         class="form-control"
-                                        value="{{ $key->$profile_form->gender }}"
+                                        <input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}"
                                     >
                                         {{ $val }}
                                     </option>
