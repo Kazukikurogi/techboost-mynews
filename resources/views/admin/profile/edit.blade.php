@@ -21,21 +21,16 @@
                         </div>
                     </div>
                    <div class="form-group row">
-                        <label class="col-md-2" for="gender">性別</label>
+                        <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <select name="gender" id="gender">
+                            <select name="gender_id">
                                 <option disabled selected value>選択して下さい</option>
                                 @foreach (["男性","女性","その他"] as $key => $val)
-                                @if($request->gender ==$val->gender) || old(gender) == $profile_form->gender )
-                                    <option
-                                        class="form-control"
-                                        value="{{ $val->gender }}" selected>{{ $val->gender }}
-                                    </option>
+                                @if((!empty($request->gender_id) && $request->gender_id == $key => $val->ID) || old('type_id') == $online_type->ID )
+                                <option value = "{{ $key => $val->ID }}" selected>{{ $key => $val->NAME }}</option>
                                 @else
-                                    <option
-                                        class="form-control"
-                                        value="{{ $val->gender }}">{{ $val->gender}}</option>
-                                @endif    
+                                <option value = "{{ $key => $val->ID }}">{{ $key => $val->NAME }}</option>
+                                @endif
                                 @endforeach
                             </select>
                         </div>
