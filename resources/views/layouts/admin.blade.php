@@ -37,6 +37,18 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    
+                    <ul>
+                    	<li><a class="profile">プロフィール</a></li>
+                    	<li><a href="/profile">プロフィール一覧</a></li>
+                    	<li><a href="/profile/create">プロフィール新規作成</a></li>
+                    </ul>
+                    
+                    <ul>
+                    	<li><a class="news">ニュース</a></li>
+                    	<li><a href="/news">ニュース一覧</a></li>
+                    	<li><a href="/news/create">ニュース新規作成</a></li>
+                    </ul>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
