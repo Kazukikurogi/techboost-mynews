@@ -40,14 +40,14 @@
                     
                     <ul>
                     	<li><a class="profile">プロフィール</a></li>
-                    	<li><a href="/profile">プロフィール一覧</a></li>
-                    	<li><a href="/profile/create">プロフィール新規作成</a></li>
+                    	<li><a href="/admin/profile">プロフィール一覧</a></li>
+                    	<li><a href="/admin/profile/create">プロフィール新規作成</a></li>
                     </ul>
                     
                     <ul>
                     	<li><a class="news">ニュース</a></li>
-                    	<li><a href="/news">ニュース一覧</a></li>
-                    	<li><a href="/news/create">ニュース新規作成</a></li>
+                    	<li><a href="/admin/news">ニュース一覧</a></li>
+                    	<li><a href="/admin/news/create">ニュース新規作成</a></li>
                     </ul>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
