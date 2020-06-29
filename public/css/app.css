@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -8,7 +7,7 @@
  */
 
 :root {
-  --blue: #3490dc;
+　--blue: #3490dc;
   --indigo: #6574cd;
   --purple: #9561e2;
   --pink: #f66d9b;
@@ -43,6 +42,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 
 html {
   font-family: sans-serif;
