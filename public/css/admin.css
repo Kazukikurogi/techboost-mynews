@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -14,32 +16,9 @@ body {
   color: #fff !important;
 }
 
-.nav-link {
-  color: #fff !important;
-}
-
-.table-dark {
-  color: #fff;
-}
-
-.list-group-item {
-  border-color: #fff;
-  background-color: #000;
-}
-
-.login-box {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.login-header {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.login-body {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-ul {
+.nav-link 
+  
+  ul {
 	width: 200px;
 	margin: 0;
 	padding: 0;
@@ -94,3 +73,26 @@ li a:hover:not(.news) {
 	color: #ffffff;
 	background-color: #1b2538;
 }
+}
+
+.table-dark {
+  color: #fff;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.login-header {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-body {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
