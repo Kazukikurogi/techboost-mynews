@@ -10,8 +10,4 @@ class Post extends Model
         return $this->hasMany('Comments','post_id');
     }
     
-    public function Category(){
-        return $this->belongsTo('Category','cat_id');
-    }
-    
 }

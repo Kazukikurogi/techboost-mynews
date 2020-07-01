@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>コメント</h2>
-                <form action="{{ action('Admin\ProfileController@update') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\CommentsController@add') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -17,17 +17,17 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="name">ニックネーム</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
+                            <input type="text" class="form-control" name="name" >
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="introduction">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="20"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                            <input type="hidden" name="id">
                             @csrf
                             <input type="submit" class="btn btn-primary" value="コメント投稿"

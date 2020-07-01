@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="title p-2">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
-                                    <a href="{{ action('Admin\ProfileController@add') }}" role="button" class="btn btn-primary">コメント</a>
+                                    <a href="{{ action('Admin\CommentsController@add') }}" role="button" class="btn btn-primary">コメント</a>
                                 </div>
                             </div>
                         </div>
@@ -43,13 +43,14 @@
                                 <div class="body mt-3">
                                     {{ str_limit($post->body, 1500) }}
                                 </div>
+                                
                             </div>
                             <div class="image col-md-6 text-right mt-4">
                                 @if ($post->image_path)
                                     <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
-                            <a href="{{ action('Admin\ProfileController@add') }}" role="button" class="btn btn-primary">コメント</a>
+                            <a href="{{ action('Admin\CommentsController@add') }}" role="button" class="btn btn-primary">コメント</a>
                         </div>
                     </div>
                     <hr color="#c0c0c0">
