@@ -15,6 +15,14 @@ class CommentsController extends Controller
     
     public function create(Request $request)
     {
+     
+        $this->validate($request, Comments::$rules);
+        
+        $comment = new Comments;
+        $form = $request->all();
+        
+        $comment->fill($form);
+        $comment->save();
         
         return redirect('/');
         

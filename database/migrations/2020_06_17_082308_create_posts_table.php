@@ -14,9 +14,7 @@ class CreatePostsTable extends Migration {
 	public function up()
 	{
 		Schema::create('posts', function($table){
-			$table->increments('id');
 			$table->string('title');
-			$table->string('cat_id'); // ポストテーブルとカテゴリーテーブルの紐付けに利用します
 			$table->text('content');
 			$table->unsignedInteger('comment_count'); // 投稿に何件のコメントがついたのかをカウントします
 			$table->timestamps();
