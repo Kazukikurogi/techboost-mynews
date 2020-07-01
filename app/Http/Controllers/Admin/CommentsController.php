@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Comments;
 
 class CommentsController extends Controller
 {
@@ -14,15 +15,6 @@ class CommentsController extends Controller
     
     public function create(Request $request)
     {
-        $rules = [
-            'title' => 'required',
-            'content' => 'required'
-            ];
-            
-        $message = array(
-            'title.required' => 'タイトルを入力してください',
-            'content.required' => 'カテゴリーを入力してください',
-            );
         
         return redirect('/');
         

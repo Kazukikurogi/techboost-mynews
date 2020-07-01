@@ -15,15 +15,15 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="name">ニックネーム</label>
+                        <label class="col-md-2" for="nickname">ニックネーム</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" >
+                            <input type="text" class="form-control" name="nickname" value="{{ old('nickname') }}" >
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="introduction">コメント</label>
+                        <label class="col-md-2" for="comment">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20"></textarea>
+                            <textarea class="form-control" name="comment" value="{{ old('comment') }}" rows="20"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
