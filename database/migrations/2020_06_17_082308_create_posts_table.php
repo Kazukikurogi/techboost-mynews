@@ -14,6 +14,7 @@ class CreatePostsTable extends Migration {
 	public function up()
 	{
 		Schema::create('posts', function($table){
+			$table->increments('id');
 			$table->string('title');
 			$table->text('content');
 			$table->unsignedInteger('comment_count'); // 投稿に何件のコメントがついたのかをカウントします

@@ -15,6 +15,7 @@ class CommentsController extends Controller
     
     public function create(Request $request)
     {
+        dd($request);
      
         $this->validate($request, Comments::$rules);
         
