@@ -26,6 +26,10 @@
                     </div>
                 </div>
             </div>
+            <h2>Comments</h2>
+            <ul>
+              
+            </ul>
         @endif
         <hr color="#c0c0c0">
         <div class="row">

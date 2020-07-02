@@ -15,7 +15,6 @@ class CommentsController extends Controller
     
     public function create(Request $request)
     {
-        dd($request);
      
         $this->validate($request, Comments::$rules);
         
@@ -28,4 +27,11 @@ class CommentsController extends Controller
         return redirect('/');
         
     }
+    
+    public function inex()
+    {
+        $posts = Comments::all();
+        return View::make('comments.index')->with('posts',$posts);
+    }
+    
 }
