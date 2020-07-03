@@ -28,11 +28,13 @@
                 </div>
             </div>
         @endif
+            <div class='comments'>
             <h3>コメント一覧</h3>
             @foreach ($comments_headline->comments as $comments)
                         <h1>{{ $comments->nickname }}</h1>
                         <h1>{{ $comments->comment }}</h1>
             @endforeach
+            </div>
             
                <hr color="#c0c0c0">
         <div class="row">
