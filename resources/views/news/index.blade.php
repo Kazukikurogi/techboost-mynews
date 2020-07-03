@@ -29,13 +29,13 @@
             </div>
         @endif
             @if (!is_null($comments_headline))
-            <div class ="comments">
-            @if ($comments_headline->nickname )
-            <h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
-            elseif
-            <h1>{{ str_limit($comments_headline->comments_headline, 50) }}</h1>
-            @endif
-            </div>
+                <div class ="comments">
+                    @if ($comments_headline->nickname )
+                        <h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
+                    elseif
+                        <h1>{{ str_limit($comments_headline->comments_headline, 50) }}</h1>
+                    @endif
+                </div>
             @endif
                <hr color="#c0c0c0">
         <div class="row">
