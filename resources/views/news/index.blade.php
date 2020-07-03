@@ -20,12 +20,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
+                        </div>
                         <div class ="comments">
                         	<h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
                         	<h1>{{ str_limit($comments_headline->comments, 50) }}</h1>
-                        </div>	
-                        <div class="col-md-6">
-                            <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
                     </div>
                 </div>
