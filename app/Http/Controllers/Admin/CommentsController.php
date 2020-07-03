@@ -27,5 +27,5 @@ class CommentsController extends Controller
         return redirect('/');
         
     }
-   
+    
 }

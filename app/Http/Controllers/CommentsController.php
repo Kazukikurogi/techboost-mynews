@@ -15,11 +15,10 @@ class CommentsController extends Controller
         $comments = Comments::all();
         
         if (count($comments) > 0) {
-            $comments_headline = $comments;
+            $comments_headline = $comments-> shift();
         } else {
             $comments_headline = null;
         }
-        
         
         return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
     }

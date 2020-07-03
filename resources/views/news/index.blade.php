@@ -28,15 +28,12 @@
                 </div>
             </div>
         @endif
-            @if (!is_null($comments_headline))
-                <div class ="comments">
-                    @if ($comments_headline->nickname )
-                        <h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
-                    elseif
-                        <h1>{{ str_limit($comments_headline->comments_headline, 50) }}</h1>
-                    @endif
-                </div>
-            @endif
+            <h3>コメント一覧</h3>
+            @foreach ($comments_headline->comments as $comments)
+                        <h1>{{ $comments->nickname }}</h1>
+                        <h1>{{ $comments->comment }}</h1>
+            @endforeach
+            
                <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
