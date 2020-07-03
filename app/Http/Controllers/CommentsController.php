@@ -12,7 +12,7 @@ class CommentsController extends Controller
 {
      public function index(Request $request)
      {
-        $comments = Comments::all();
+        $comments = Comments::all()->sortByDesc('timestamps');
         
         if (count($comments) > 0) {
             $comments_headline = $comments-> shift();
@@ -20,6 +20,7 @@ class CommentsController extends Controller
             $comments_headline = null;
         }
         
-        return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
+        return view('views/news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
+        \Log::info('comments_headline');
     }
 }

@@ -30,10 +30,14 @@
         @endif
             <div class='comments'>
             <h3>コメント一覧</h3>
-            @foreach ($comments_headline->comments as $comments)
+            @if(!is_null($comments_headline))
+             <div class="row">
+                <div class="comments_headline col-md-10 mx-auto">
+            @foreach ($comments_headline as $comments)
                         <h1>{{ $comments->nickname }}</h1>
                         <h1>{{ $comments->comment }}</h1>
             @endforeach
+            @endif
             </div>
             
                <hr color="#c0c0c0">
