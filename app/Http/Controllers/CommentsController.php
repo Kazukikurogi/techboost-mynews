@@ -10,16 +10,16 @@ use App\Comments;
 
 class CommentsController extends Controller
 {
-    public function index(Request $request)
-    {
+     public function index(Request $request)
+     {
         $comments = Comments::all();
         
         if (count($comments) > 0) {
-            $comments_headline = $comments->shift();
+            $comments_headline = $comments;
         } else {
             $comments_headline = null;
         }
-
+        
         return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
     }
 }
