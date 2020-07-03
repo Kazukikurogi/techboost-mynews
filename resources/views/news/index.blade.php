@@ -20,18 +20,18 @@
                                 </div>
                             </div>
                         </div>
+                        <div class ="comments">
+                        	<h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
+                        	<h1>{{ str_limit($comments_headline->comments, 50) }}</h1>
+                        </div>	
                         <div class="col-md-6">
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2>Comments</h2>
-            <ul>
-              
-            </ul>
         @endif
-        <hr color="#c0c0c0">
+               <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)

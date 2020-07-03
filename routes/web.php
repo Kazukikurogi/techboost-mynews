@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/','Admin\CommentsController@add');
     Route::post('/','Admin\CommentsController@create');
     
+    
 });
 Auth::routes();
 

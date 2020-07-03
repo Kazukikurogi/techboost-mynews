@@ -28,10 +28,4 @@ class CommentsController extends Controller
         
     }
     
-    public function inex()
-    {
-        $posts = Comments::all();
-        return View::make('comments.index')->with('posts',$posts);
-    }
-    
 }
