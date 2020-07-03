@@ -20,6 +20,7 @@ class CommentsController extends Controller
             $comments_headline = null;
         }
         
+        
         return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
     }
 }

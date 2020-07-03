@@ -14,23 +14,29 @@
                                         <img src="{{ $headline->image_path }}">
                                     @endif
                                 </div>
+                                //ボタンのURL変更
                                 <div class="title p-2">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
-                                    <a href="{{ action('Admin\CommentsController@add') }}" role="button" class="btn btn-primary">コメント</a>
+                                    <a href="/" role="button" class="btn btn-primary">コメント</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
-                        <div class ="comments">
-                        	<h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
-                        	<h1>{{ str_limit($comments_headline->comments, 50) }}</h1>
-                        </div>
                     </div>
                 </div>
             </div>
         @endif
+            @if (!is_null($comments_headline))
+            <div class ="comments">
+            @if ($comments_headline->nickname )
+            <h1>{{ str_limit($comments_headline->nickname, 50) }}</h1>
+            elseif
+            <h1>{{ str_limit($comments_headline->comments_headline, 50) }}</h1>
+            @endif
+            </div>
+            @endif
                <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
@@ -54,7 +60,8 @@
                                     <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
-                            <a href="{{ action('Admin\CommentsController@add') }}" role="button" class="btn btn-primary">コメント</a>
+                            //ボタンのURL変更
+                            <a href="/" role="button" class="btn btn-primary">コメント</a>
                         </div>
                     </div>
                     <hr color="#c0c0c0">
