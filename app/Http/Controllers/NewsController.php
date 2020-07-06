@@ -30,7 +30,6 @@ class NewsController extends Controller
         } else {
             $comments_headline = null;
         }
-        dd($headline);
          return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
     }
     
