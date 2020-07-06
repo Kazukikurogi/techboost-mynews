@@ -29,8 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('profile/delete', 'Admin\ProfileController@delete');
     Route::get('/','Admin\CommentsController@add');
     Route::post('/','Admin\CommentsController@create');
-    ///追記
-    Route::get('','CommentsController@index');
+    
     
 });
 Auth::routes();

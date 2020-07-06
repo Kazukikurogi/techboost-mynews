@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
 
 use App\News;
+use App\Comments;
 
 class NewsController extends Controller
 {
@@ -14,15 +15,23 @@ class NewsController extends Controller
     {
       
         $posts = News::all()->sortByDesc('updated_at');
-
         if (count($posts) > 0) {
             $headline = $posts->shift();
         } else {
             $headline = null;
         }
-
-        // news/index.blade.php ファイルを渡している
-        // また View テンプレートに headline、 posts、という変数を渡している
         return view('news.index', ['headline' => $headline, 'posts' => $posts]);
+        
+        
+        $comments = Comments::all();
+    
+        if (count($comments) > 0) {
+            $comments_headline = $comments;
+        } else {
+            $comments_headline = null;
+        }
+        dd($headline);
+         return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
     }
+    
 }
