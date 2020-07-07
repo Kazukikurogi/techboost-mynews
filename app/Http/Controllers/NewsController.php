@@ -20,8 +20,12 @@ class NewsController extends Controller
         } else {
             $headline = null;
         }
+
         
-        $comments = Comments::all();
+        $posts_news = News::where('title','body');
+        foreach ($posts_news as $comments)
+        
+        $comments = Comments::where('nickname','comment')->get();
     
         if (count($comments) > 0) {
             $comments_headline = $comments;

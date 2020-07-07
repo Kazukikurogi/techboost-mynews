@@ -72,10 +72,10 @@
                             <a href="/admin" role="button" class="btn btn-primary">コメント</a>
                         </div>
                         <div class="comments_headline p=1">
-                            <div class="cp_box2">
+                            <div class="cp_box">
                                 <input id="cp01" type="checkbox"/>
                                 <label for="cp01">続きを読む</label>
-        	                    <div class="cp_container2">
+        	                    <div class="cp_container">
                                     <h3>コメント一覧</h3>
                                     @if(!is_null($comments_headline))
                                         <div class="comments_headline p=1">
@@ -87,7 +87,7 @@
                                     @endif
                                 </div>
                             </div>
-                        </div>>
+                        </div>
                     <hr color="#c0c0c0">
                 @endforeach
             </div>
