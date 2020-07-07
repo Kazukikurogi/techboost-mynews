@@ -20,8 +20,6 @@ class NewsController extends Controller
         } else {
             $headline = null;
         }
-        return view('news.index', ['headline' => $headline, 'posts' => $posts]);
-        
         
         $comments = Comments::all();
     
@@ -30,7 +28,7 @@ class NewsController extends Controller
         } else {
             $comments_headline = null;
         }
-         return view('news.index', ['comments_headline' => $comments_headline, 'comments' => $comments]);
+         return view('news.index', ['headline' => $headline, 'posts' => $posts, 'comments_headline' => $comments_headline, 'comments' => $comments]);
     }
     
 }

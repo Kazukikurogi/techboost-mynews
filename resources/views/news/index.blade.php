@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="title p-2">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
-                                    <a href="/" role="button" class="btn btn-primary">コメント</a>
+                                    <a href="/admin" role="button" class="btn btn-primary">コメント</a>
                                 </div>
                             </div>
                         </div>
@@ -27,18 +27,25 @@
                 </div>
             </div>
         @endif
-            <div class='comments'>
-            <h3>コメント一覧</h3>
-            @if(!is_null($comments_headline))
                 <div class="comments_headline col-md-10 mx-auto">
-                    @foreach ($comments_headline as $comments)
-                        <h1>{{ $comments->nickname }}</h1>
-                        <h1>{{ $comments->comment }}</h1>
-                    @endforeach
+                    <div class="cp_box">
+                    <input id="cp00" type="checkbox">
+	                    <label for="cp00">続きを読む</label>
+	                    <div class="cp_container">
+                        
+                            <h3>コメント一覧</h3>
+                            @if(!is_null($comments_headline))
+                            <div class="comments_headline col-md-11 mx-auto">
+                                    @foreach ($comments_headline as $comments)
+                                        <h6>ニックネーム：{{ $comments->nickname }}</h6>
+                                        <h6>コメント：{{ $comments->comment }}</h6>
+                                    @endforeach
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
-            @endif
-            </div>
-        
+                
                <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
@@ -62,9 +69,25 @@
                                     <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
-                            <a href="/" role="button" class="btn btn-primary">コメント</a>
+                            <a href="/admin" role="button" class="btn btn-primary">コメント</a>
                         </div>
-                    </div>
+                        <div class="comments_headline p=1">
+                            <div class="cp_box2">
+                                <input id="cp01" type="checkbox"/>
+                                <label for="cp01">続きを読む</label>
+        	                    <div class="cp_container2">
+                                    <h3>コメント一覧</h3>
+                                    @if(!is_null($comments_headline))
+                                        <div class="comments_headline p=1">
+                                            @foreach ($comments_headline as $comments)
+                                                <h6>ニックネーム：{{ $comments->nickname }}</h6>
+                                                <h6>コメント：{{ $comments->comment }}</h6>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>>
                     <hr color="#c0c0c0">
                 @endforeach
             </div>

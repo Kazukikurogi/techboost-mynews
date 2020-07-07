@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
 
-// 追記
+// 下記内容をapp/Http/Controllers/NewsControllerに移行
 use App\Comments;
 
 class CommentsController extends Controller
