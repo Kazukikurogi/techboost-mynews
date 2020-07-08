@@ -16,9 +16,9 @@ class NewsController extends Controller
       
         $news_list= News::all()->sortByDesc('updated_at');
         if (count($news_list) > 0) {
-            $news = $news_list->shift();
+            $headline = $news_list->shift();
         } else {
-            $news = null;
+            $headline = null;
         }
         
         $news_comments = [];
@@ -31,7 +31,7 @@ class NewsController extends Controller
             ];
         }
         
-         return view('news.index', ['news' => $news, 'news_list' => $news_list, 'news_comments' => $news_comments, 'comments' => $comments]);
+         return view('news.index', ['headline' => $headline, 'news' => $news, 'news_list' => $news_list, 'news_comments' => $news_comments, 'comments' => $comments]);
     }
     
 }
