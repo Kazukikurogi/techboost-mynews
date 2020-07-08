@@ -25,9 +25,8 @@ class NewsController extends Controller
         foreach ($news_list as $news) {
             $comments = $news->comments();
             $news_comments[] = [
-                'news_title' => $news->title,
-                'news_title' => $news->body,
-                'comments'   => $comments
+                'comments' => $news->nickname,
+                'comments' => $news->comment
             ];
         }
         

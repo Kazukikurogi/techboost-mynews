@@ -37,8 +37,8 @@
                             @if(!is_null($news_comments))
                             <div class="news_comments col-md-11 mx-auto">
                                     @foreach ($comments as $news_comments)
-                                        <h6>ニックネーム：{{ $comments }}</h6>
-                                        <h6>コメント：{{ $comments }}</h6>
+                                        <h6>ニックネーム：{{ nickname }}</h6>
+                                        <h6>コメント：{{ comment }}</h6>
                                     @endforeach
                                 </div>
                             @endif
@@ -54,19 +54,18 @@
                         <div class="row">
                             <div class="text col-md-6">
                                 <div class="date">
-                                    {{ $news_list->updated_at->format('Y年m月d日') }}
+                                    {{ $news->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($news_list->title, 150) }}
+                                    {{ str_limit($news->title, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($news_list->body, 1500) }}
+                                    {{ str_limit($news->body, 1500) }}
                                 </div>
-                                
                             </div>
                             <div class="image col-md-6 text-right mt-4">
-                                @if ($news_list->image_path)
-                                    <img src="{{ $news_list->image_path }}">
+                                @if ($news->image_path)
+                                    <img src="{{ $news->image_path }}">
                                 @endif
                             </div>
                             <a href="/admin" role="button" class="btn btn-primary">コメント</a>
@@ -80,8 +79,8 @@
                                     @if(!is_null($news_comments))
                                         <div class="news_comments p=1">
                                             @foreach ($comments as $news_comments)
-                                                <h6>ニックネーム：{{ $comments }}</h6>
-                                                <h6>コメント：{{ $comments }}</h6>
+                                                <h6>ニックネーム：{{ nickname }}</h6>
+                                                <h6>コメント：{{ comment }}</h6>
                                             @endforeach
                                         </div>
                                     @endif
