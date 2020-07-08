@@ -14,22 +14,24 @@ class NewsController extends Controller
     
     {
       
-        $posts = News::all()->sortByDesc('updated_at');
-        if (count($posts) > 0) {
-            $headline = $posts->shift();
+        $news_list= News::all()->sortByDesc('updated_at');
+        if (count($news_list) > 0) {
+            $news = $news_list->shift();
         } else {
-            $headline = null;
+            $news = null;
         }
         
-        
-        
-    
-        if (count($comments) > 0) {
-            $comments_headline = $comments;
-        } else {
-            $comments_headline = null;
+        $news_comments = [];
+        foreach ($news_list as $news) {
+            $comments = $news->comments();
+            $news_comments[] = [
+                'news_title' => $news->title,
+                'news_title' => $news->body,
+                'comments'   => $comments
+            ];
         }
-         return view('news.index', ['headline' => $headline, 'posts' => $posts, 'comments_headline' => $comments_headline, 'comments' => $comments]);
+        
+         return view('news.index', ['news' => $news, 'news_list' => $news_list, 'news_comments' => $news_comments, 'comments' => $comments]);
     }
     
 }
