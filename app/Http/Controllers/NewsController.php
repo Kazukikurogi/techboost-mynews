@@ -21,16 +21,15 @@ class NewsController extends Controller
             $headline = null;
         }
         
-        $news_comments = [];
         foreach ($news_list as $news) {
             $comments = $news->comments();
             $news_comments[] = [
-                'comments' => $news->nickname,
-                'comments' => $news->comment
+                'comment' => $news ->nickname,
+                'comment' => $news ->comment
             ];
         }
         
-         return view('news.index', ['headline' => $headline, 'news' => $news, 'news_list' => $news_list, 'news_comments' => $news_comments, 'comments' => $comments]);
+         return view('news.index', ['headline' => $headline, 'news_list' => $news_list, 'news' => $news, 'news_comments' => $news_comments, 'comments' => $comments]);
     }
     
 }

@@ -21,6 +21,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <p class="body mx-auto">{{ $news->updated_at->format('Y年m月d日') }}</p>
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
                     </div>
@@ -32,11 +33,10 @@
                     <input id="cp00" type="checkbox">
 	                    <label for="cp00">続きを読む</label>
 	                    <div class="cp_container">
-                        
                             <h3>コメント一覧</h3>
                             @if(!is_null($news_comments))
-                            <div class="news_comments col-md-11 mx-auto">
-                                    @foreach ($comments as $news_comments)
+                                <div class="news_comments col-md-11 mx-auto">
+                                    @foreach ($comments as $comment)
                                         <h6>ニックネーム：{{ nickname }}</h6>
                                         <h6>コメント：{{ comment }}</h6>
                                     @endforeach
@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="text col-md-6">
                                 <div class="date">
-                                    {{ $news->updated_at->format('Y年m月d日') }}
+                                    <p>{{ $news->updated_at->format('Y年m月d日') }}</p>
                                 </div>
                                 <div class="title">
                                     {{ str_limit($news->title, 150) }}
@@ -74,23 +74,23 @@
                             <div class="cp_box">
                                 <input id="cp01" type="checkbox"/>
                                 <label for="cp01">続きを読む</label>
-        	                    <div class="cp_container">
-                                    <h3>コメント一覧</h3>
-                                    @if(!is_null($news_comments))
-                                        <div class="news_comments p=1">
-                                            @foreach ($comments as $news_comments)
-                                                <h6>ニックネーム：{{ nickname }}</h6>
-                                                <h6>コメント：{{ comment }}</h6>
-                                            @endforeach
-                                        </div>
-                                    @endif
+        	                        <div class="cp_container">
+                                        <h3>コメント一覧</h3>
+                                        @if(!is_null($news_comments))
+                                            <div class="news_comments p=1">
+                                                @foreach ($comments as $comment)
+                                                    <h6>ニックネーム：{{ nickname }}</h6>
+                                                    <h6>コメント：{{ comment }}</h6>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <hr color="#c0c0c0">
-                @endforeach
+                        <hr color="#c0c0c0">
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
