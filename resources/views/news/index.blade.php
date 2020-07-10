@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ $news->updated_at->format('Y年m月d日') }}</p>
+                            <p class="body mx-auto">{{ $headline->updated_at->format('Y年m月d日') }}</p>
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
                     </div>
@@ -36,9 +36,9 @@
                             <h3>コメント一覧</h3>
                             @if(!is_null($news_comments))
                                 <div class="news_comments col-md-11 mx-auto">
-                                    @foreach ($comments as $comment)
-                                        <h6>ニックネーム：{{ nickname }}</h6>
-                                        <h6>コメント：{{ comment }}</h6>
+                                    @foreach ($news_comments as $comments_get)
+                                        <h6>ニックネーム：{{ $comments_get->nickname }}</h6>
+                                        <h6>コメント：{{ $comments_get->comment }}</h6>
                                     @endforeach
                                 </div>
                             @endif
@@ -49,23 +49,23 @@
                <hr color="#c0c0c0">
         <div class="row">
             <div class="news col-md-8 mx-auto mt-3">
-                @foreach($news_list as $headline)
+                @foreach($posts as $headline)
                     <div class="headline">
                         <div class="row">
                             <div class="text col-md-6">
                                 <div class="date">
-                                    <p>{{ $news->updated_at->format('Y年m月d日') }}</p>
+                                    <p>{{ $headline->updated_at->format('Y年m月d日') }}</p>
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($news->title, 150) }}
+                                    {{ str_limit($headline->title, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($news->body, 1500) }}
+                                    {{ str_limit($headline->body, 1500) }}
                                 </div>
                             </div>
                             <div class="image col-md-6 text-right mt-4">
-                                @if ($news->image_path)
-                                    <img src="{{ $news->image_path }}">
+                                @if ($headline->image_path)
+                                    <img src="{{ $headline->image_path }}">
                                 @endif
                             </div>
                             <a href="/admin" role="button" class="btn btn-primary">コメント</a>
@@ -78,9 +78,9 @@
                                         <h3>コメント一覧</h3>
                                         @if(!is_null($news_comments))
                                             <div class="news_comments p=1">
-                                                @foreach ($comments as $comment)
-                                                    <h6>ニックネーム：{{ nickname }}</h6>
-                                                    <h6>コメント：{{ comment }}</h6>
+                                                @foreach ($news_comments as $comments_get)
+                                                    <h6>ニックネーム：{{ $comments_get->nickname }}</h6>
+                                                    <h6>コメント：{{ $comments_get->comment }}</h6>
                                                 @endforeach
                                             </div>
                                         @endif
