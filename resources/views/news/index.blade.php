@@ -78,7 +78,7 @@
                                         <h3>コメント一覧</h3>
                                         @if(!is_null($news_comments))
                                             <div class="news_comments p=1">
-                                                @foreach ($news_comments as $news_comment =>$comments_get)
+                                                @foreach ($news_comments as $news_comment)
                                                     @foreach ($news_comment ->nickname as $comments_get)
                                                     <h6>{{ $commetns_get }}</h6>
                                                     @endforeach
