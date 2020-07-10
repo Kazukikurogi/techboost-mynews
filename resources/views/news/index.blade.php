@@ -36,16 +36,16 @@
                             <h3>コメント一覧</h3>
                             @if(!is_null($news_comments))
                                 <div class="news_comments col-md-11 mx-auto">
-                                    @foreach ($news_comments as $comments_get)
-                                        <h6>ニックネーム：{{ $comments_get->nickname }}</h6>
-                                        <h6>コメント：{{ $comments_get->comment }}</h6>
+                                    @foreach ($news_comments as $news_comment)
+                                        @foreach ($news_comment ->nickname as $comments_get)
+                                        <h6>{{ $commetns_get }}</h6>
+                                        @endforeach
                                     @endforeach
                                 </div>
                             @endif
                         </div>
                     </div>
                 </div>
-                
                <hr color="#c0c0c0">
         <div class="row">
             <div class="news col-md-8 mx-auto mt-3">
@@ -78,9 +78,10 @@
                                         <h3>コメント一覧</h3>
                                         @if(!is_null($news_comments))
                                             <div class="news_comments p=1">
-                                                @foreach ($news_comments as $comments_get)
-                                                    <h6>ニックネーム：{{ $comments_get->nickname }}</h6>
-                                                    <h6>コメント：{{ $comments_get->comment }}</h6>
+                                                @foreach ($news_comments as $news_comment =>$comments_get)
+                                                    @foreach ($news_comment ->nickname as $comments_get)
+                                                    <h6>{{ $commetns_get }}</h6>
+                                                    @endforeach
                                                 @endforeach
                                             </div>
                                         @endif

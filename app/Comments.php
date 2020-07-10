@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comments extends Model
 {
-    protected $guarded = array();
+    protected $guarded = array('id');
     
     public static $rules = array(
         'nickname' => 'required',
