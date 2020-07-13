@@ -12,6 +12,5 @@ class Comments extends Model
         'nickname' => 'required',
         'comment' => 'required',
         );
-    
-  
+        
 }

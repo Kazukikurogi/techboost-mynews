@@ -23,7 +23,7 @@ class News extends Model
     
     public function comments()
     {
-        return $this->hasMany('App\Comments');
+        return $this->hasMany('App\Comments', 'news_id');
         
     }
     

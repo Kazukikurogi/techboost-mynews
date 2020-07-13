@@ -14,27 +14,19 @@ class NewsController extends Controller
     
     {
         $posts= News::all()->sortByDesc('updated_at');
-        if (count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
-            $headline = null;
-        }
         
         
         $news_comments = [];
         foreach($posts as $headline_news) {
-            $comments_get = $headline_news->comments();
+            $comments = $headline_news->comments();
             $news_comments[] = [
-                'news_title' ->$headline_news=>'title', 
-                'news_title' ->$headline_news=>'body', 
-                'comments' ->$comments_get=>'nickname',
-                'comments' ->$comments_get=>'comment'
+                'news' =>$headline_news, 
+                'comments' =>$comments,
                 ];
         }
     
-        return view('news.index', [ 'headline' => $headline, 'posts' => $posts, 'news_comments'=>$news_comments,
+        return view('news.index', [ 'posts' => $posts, 'news_comments'=>$news_comments
         ]);
-    
     }
         
 }
