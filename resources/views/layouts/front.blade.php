@@ -43,6 +43,10 @@
                         <ul class="navbar-nav mr-auto">
 
                         </ul>
+                        
+                        <div class="col-md-2">
+                            <input type="submit" class="btn btn-primary" value="検索">
+                        </div>
 
                      
                          <!-- Right Side Of Navbar -->

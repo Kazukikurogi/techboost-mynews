@@ -75,7 +75,7 @@ class NewsController extends Controller
       $news = News::find($request->id);
       // 送信されてきたフォームデータを格納する
       $form = $request->all();
-      //以下17の編集履歴の記録と参照で変更
+      
       if ($request->remove == 'true') {
             $news_form['image_path'] = null;
         } elseif ($request->file('image')) {

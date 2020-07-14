@@ -16,6 +16,7 @@ class NewsController extends Controller
         $posts= News::all()->sortByDesc('updated_at');
         
         
+        
         $news_comments = [];
         foreach($posts as $headline_news) {
             $comments = $headline_news->comments();
