@@ -23,13 +23,12 @@ class NewsController extends Controller
         }
         
         $news_headline_comments =[];
-        foreach($posts as $headline_news) {
-            $headline_comments = $headline_news->comments;
+            $headline_comments = $headline->comments;
             $news_headline_comments[] = [
+                'headline' -> $headline,
                 'headline_comments' ->$headline_comments
                 ];
-        }
-
+        
         
         
         $news_comments = [];

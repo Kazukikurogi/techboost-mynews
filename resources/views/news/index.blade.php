@@ -35,7 +35,7 @@
                             <h3>コメント一覧</h3>
                             @if(!is_null($headline))
                                 <div class="news_comments col-md-11 mx-auto">
-                                    @foreach ($news_headline_comments['comments'] as $comment)
+                                    @foreach ($headline_comments as $comment)
                                         <h6>{{ $comment['nickname'] }}</h6>
                                         <h6>{{ $comment['comment'] }}</h6>
                                     @endforeach
@@ -78,7 +78,7 @@
                                         <h3>コメント一覧</h3>
                                         @if(!is_null($news_comments))
                                             <div class="news_comments p=1">
-                                                @foreach ($news_comment['comments'] as $comment)
+                                                @foreach ($news_comment['commments'] as $comment)
                                                     <h6>{{ $comment['nickname'] }}</h6>
                                                     <h6>{{ $comment['comment'] }}</h6>
                                                 @endforeach
