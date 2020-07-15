@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>コメント</h2>
-                <form action="{{ action('Admin\CommentsController@add') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\CommentsController@create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -28,6 +28,13 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <input type="hidden" name="id">
+                            <input type="hidden" name="news_id" value="{{ $news_id }}">
                             @csrf
-                            <input type="submit" class="btn btn-primary" value="コメント投稿"
+                            <input type="submit" class="btn btn-primary" value="コメント投稿">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
