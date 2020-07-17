@@ -26,6 +26,9 @@
                             <p class="body mx-auto">{{ $headline->updated_at->format('Y年m月d日') }}</p>
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
+                        <div>
+                  	         <p class="body mx-auto">{{ $headline_comments_count }}件のコメント</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,6 +78,9 @@
                                         @endif
                                     </div>
                                 </div>
+                            </div>
+                            <div>
+                                <p class="body mx-auto">{{ $comments_count }}件のコメント</p>
                             </div>
                         </div>
                             <div class="cp_box p=1 col-md-10 mx-auto">

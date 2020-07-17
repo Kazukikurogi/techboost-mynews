@@ -32,7 +32,8 @@ class ProfileController extends Controller
         public function index(Request $request)
      {    $cond_title = $request->cond_title;
       if ($cond_title != '') {
-          $posts = Profile::where('title', $cond_title)->get();
+          $posts = Profile::where('name','LIKE', "%$cond_title%")
+          ->orWhere('introduction','LIKE', "%$cond_title%")->get();
       } else {
           $posts = Profile::all();
       }
