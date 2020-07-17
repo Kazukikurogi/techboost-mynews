@@ -1,6 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
+<div class="front mx-auto">
     <div class="container">
         <hr color="#c0c0c0">
         @if (!is_null($headline))
@@ -14,10 +15,11 @@
                                         <img src="{{ $headline->image_path }}">
                                     @endif
                                 </div>     
-                                <div class="title p-2">
+                                <div class="title p-3">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
-                                    <a href="{{ url('/admin/' . $headline['news']['id']) }}" role="button" class="btn btn-primary">コメント</a>
+                                    <a href="{{ url('/admin/' . $headline['id']) }}" role="button" class="btn btn-primary">コメント</a>
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -36,8 +38,8 @@
                             @if(!is_null($headline))
                                 <div class="news_comments col-md-11 mx-auto">
                                     @foreach ($headline_comments as $comment)
-                                        <h6>{{ $comment['nickname'] }}</h6>
-                                        <h6>{{ $comment['comment'] }}</h6>
+                                        <h6>ニックネーム：{{ $comment['nickname'] }}</h6>
+                                        <h6>コメント：{{ $comment['comment'] }}</h6>
                                     @endforeach
                                 </div>
                             @endif
@@ -50,47 +52,50 @@
         <div class="row">
             <div class="news col-md-8 mx-auto mt-3">
                 @foreach($news_comments as $news_comment)
-                    <div class="headline">
+                    <div class="news_comments">
                         <div class="row">
                             <div class="text col-md-6">
-                                <div class="date">
-                                    <p>{{ $news_comment['news']['updated_at']->format('Y年m月d日') }}</p>
-                                </div>
-                                <div class="title">
-                                    {{ str_limit($news_comment['news']['title'], 150) }}
-                                </div>
-                                <div class="body mt-3">
-                                    {{ str_limit($news_comment['news']['body'], 1500) }}
-                                </div>
+                                <div class="caption mx-auto">
+                                    <div class="date">
+                                        <p>{{ $news_comment['news']['updated_at']->format('Y年m月d日') }}</p>
+                                    </div>
+                                    <div class="title">
+                                        {{ str_limit($news_comment['news']['title'], 150) }}
+                                    </div>
+                                    <div class="body mt-3">
+                                        {{ str_limit($news_comment['news']['body'], 1500) }}
+                                    </div>
+                                    <a href="{{ url('/admin/' . $news_comment['news']['id']) }}" role="button" class="btn btn-primary">コメント</a>
+                                </div> 
                             </div>
-                           <div class="image col-md-6 text-right mt-4">
-                                @if ($news_comment['news']['image_path'])
-                                <img src="{{ $news_comment['news']['image_path'] }}">
-                                @endif
-                            </div>
-                            <a href="{{ url('/admin/' . $news_comment['news']['id']) }}" role="button" class="btn btn-primary">コメント</a>
-                        </div>
-                        <div class="news_comments p=1">
-                            <div class="cp_box">
-                                <input id="cp01" type="checkbox"/>
-                                <label for="cp01">続きを読むテスト</label>
-        	                        <div class="cp_container">
-                                        <h3>コメント一覧</h3>
-                                        @if(!is_null($news_comments))
-                                            <div class="news_comments p=1">
-                                                @foreach ($news_comment['commments'] as $comment)
-                                                    <h6>{{ $comment['nickname'] }}</h6>
-                                                    <h6>{{ $comment['comment'] }}</h6>
-                                                @endforeach
-                                            </div>
+                                <div class="caption mx-auto">
+                                   <div class="image   row">
+                                        @if ($news_comment['news']['image_path'])
+                                        <img src="{{ $news_comment['news']['image_path'] }}">
                                         @endif
                                     </div>
                                 </div>
                             </div>
-                        <hr color="#c0c0c0">
-                    @endforeach
+                        </div>
+                            <div class="cp_box p=1 col-md-10 mx-auto">
+                                <input id="cp01" type="checkbox"/>
+                                <label for="cp01">続きを読む</label>
+            	                   <div class="cp_container">
+                                        <h3>コメント一覧</h3>
+                                           @if(!is_null($news_comments))
+                                            <div class="cp_box p=1">
+                                                @foreach ($news_comment['comments'] as $comment)
+                                                    <h6>ニックネーム：{{ $comment['nickname'] }}</h6>
+                                                    <h6>コメント：{{ $comment['comment'] }}</h6>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div>
+                            </div>
+                            <hr color="#c0c0c0">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

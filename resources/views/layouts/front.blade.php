@@ -41,17 +41,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-
                         </ul>
                         
-                        <div class="col-md-2">
-                            <input type="submit" class="btn btn-primary" value="検索">
-                        </div>
-
-                     
-                         <!-- Right Side Of Navbar -->
+                        <Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
-
+                        
+                        <div class="front mx-auto">
+                        <form action="{{ action('NewsController@store_search') }}" method="get">
+                            <div class="front_search mx-auto">
+                                <input type="submit" class="btn btn-primary" value="検索">
+                                <input type="text" name="news_word" placeholder="検索キーワードを入力">
+                            </div>
+                        </form>
+                        </div>
+                        &nbsp;&nbsp;
+                        
                         {{-- 以下を追記 --}}
                         <!-- Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}

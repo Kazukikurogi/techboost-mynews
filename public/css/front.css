@@ -33,31 +33,31 @@ body {
   font-size: 0.8em;
 }
 
-.posts .post .date {
+.news_comments .caption .date {
   font-size: 0.6em;
   color: #999999;
 }
 
-.posts .post .title {
+.news_comments .caption .title {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-.posts .post .body {
-  font-size: 0.8em;
+.news_comments .caption .body {
+  font-size: 1.0em;
 }
 
-.posts .post .image img {
-  width: 250px;
+.news_comments .caption .image img {
+  width: 350px;
+ 
 }
 
 .cp_box , .cp_box :before, .cp_box :after {
 	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 }
 .cp_box {
 	width: auto;
-	margin: 2em auto;
+	margin: 40px;
 }
 .cp_box label {
 	font-weight: bold;
@@ -65,7 +65,7 @@ body {
 	display: block;
 	width: 80%;
 	margin: auto;
-	padding: 0.3em 1em;
+	padding: 0.3em ;
 	cursor: pointer;
 	transition: all 0.3s;
 	text-align: center;
@@ -102,7 +102,7 @@ body {
 	z-index: 10;
 	overflow: hidden;
 	height: 0;
-	margin-top: -1px;
+	margin-top: 32px;
 	transition: height 0.3s ease-in-out,box-shadow 0.6s linear;
 	background: rgba(255, 255, 255, 0.5);
 }
