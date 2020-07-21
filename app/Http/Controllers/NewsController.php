@@ -29,7 +29,7 @@ class NewsController extends Controller
                 'headline_comments' =>$headline_comments
                 ];
         
-         $headline_comments_count= $headline_comments->count();
+         $headline_comments->count();
         
         $news_comments = [];
         foreach($posts as $news) {
@@ -40,11 +40,10 @@ class NewsController extends Controller
                 ];
         }
         
-        $comments_count= $comments->count();
+        $comments->count();
         
         return view('news.index', [ 'headline' => $headline, 'posts' => $posts, 'news_headline_comments'=>$news_headline_comments, 
-        'news_comments'=>$news_comments, 'headline_comments' =>$headline_comments,'comments' =>$comments,'comments_count'=>$comments_count,
-        'headline_comments_count'=>$headline_comments_count
+        'news_comments'=>$news_comments, 'headline_comments' =>$headline_comments,'comments' =>$comments
         ]);
     }
     

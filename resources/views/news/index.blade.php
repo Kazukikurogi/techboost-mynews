@@ -19,15 +19,15 @@
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
                                     <a href="{{ url('/admin/' . $headline['id']) }}" role="button" class="btn btn-primary">コメント</a>
                                 </div>
-                                
                             </div>
+    
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ $headline->updated_at->format('Y年m月d日') }}</p>
+                            <p class="date mx-auto">{{ $headline->updated_at->format('Y年m月d日') }}</p>
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
-                        <div>
-                  	         <p class="body mx-auto">{{ $headline_comments_count }}件のコメント</p>
+                        <div class="headline_comments_count col-md-11 mx-auto">
+                            <p class="body mx-auto">{{ $headline_comments->count() }}件のコメント</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="news_comments col-md-10 mx-auto">
                     <div class="cp_box">
                     <input id="cp00" type="checkbox">
-	                    <label for="cp00">続きを読む</label>
+	                    <label for="cp00">コメントを読む</label>
 	                    <div class="cp_container">
                             <h3>コメント一覧</h3>
                             @if(!is_null($headline))
@@ -80,12 +80,12 @@
                                 </div>
                             </div>
                             <div>
-                                <p class="body mx-auto">{{ $comments_count }}件のコメント</p>
+                                <p class="body mx-auto">{{ $comments->count() }}件のコメント</p>
                             </div>
                         </div>
                             <div class="cp_box p=1 col-md-10 mx-auto">
                                 <input id="cp01" type="checkbox"/>
-                                <label for="cp01">続きを読む</label>
+                                <label for="cp01">コメントを読む</label>
             	                   <div class="cp_container">
                                         <h3>コメント一覧</h3>
                                            @if(!is_null($news_comments))
