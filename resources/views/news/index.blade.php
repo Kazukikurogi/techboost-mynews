@@ -34,7 +34,7 @@
             </div>
                 <div class="news_comments col-md-10 mx-auto">
                     <div class="cp_box">
-                    <input id="cp00" type="checkbox">
+                    <input id="cp00" type="checkdivbox">
 	                    <label for="cp00">コメントを読む</label>
 	                    <div class="cp_container">
                             <h3>コメント一覧</h3>

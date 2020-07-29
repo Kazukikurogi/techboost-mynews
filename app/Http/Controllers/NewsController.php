@@ -23,13 +23,12 @@ class NewsController extends Controller
         }
         
         $news_headline_comments =[];
-            $headline_comments = $headline->comments;
-            $news_headline_comments[] = [
-                'headline' => $headline,
-                'headline_comments' =>$headline_comments
-                ];
+        $headline_comments = $headline->comments;
+        $news_headline_comments[] = [
+            'headline' => $headline,
+            'headline_comments' =>$headline_comments
+        ];
         
-         $headline_comments->count();
         
         $news_comments = [];
         foreach($posts as $news) {
@@ -37,26 +36,24 @@ class NewsController extends Controller
             $news_comments[] = [
                 'news' =>$news, 
                 'comments' =>$comments,
-                ];
+            ];
         }
         
-        $comments->count();
-        
         return view('news.index', [ 'headline' => $headline, 'posts' => $posts, 'news_headline_comments'=>$news_headline_comments, 
-        'news_comments'=>$news_comments, 'headline_comments' =>$headline_comments,'comments' =>$comments
+        'news_comments'=>$news_comments, 'headline_comments' =>$headline_comments,'comments' =>$comments,
         ]);
     }
     
-    public function store_search(Request $request)
+    public function news_research(Request $request)
     {
-    $news_word = $request->news_word;
-          if ($news_word != '') {
-              $word_posts = News::where('title','LIKE', "%$news_word%")
-              ->orWhere('body' ,'LIKE', "%$news_word%")->get();
+    $news_word = $request->news_word; 
+        if ($news_word != '') {
+            $word_posts = News::where('title','LIKE', "%$news_word%")
+            ->orWhere('body' ,'LIKE', "%$news_word%")->get();
         } else {
-              $word_posts = News::all();
-          }
+            $word_posts = News::all();
+        }
           
-          return view('news.search',['news_word'=> $news_word, 'word_posts'=> $word_posts]);
+            return view('news.search',['news_word'=> $news_word, 'word_posts'=> $word_posts]);
     }
 }

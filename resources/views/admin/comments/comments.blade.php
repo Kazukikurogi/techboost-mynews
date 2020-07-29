@@ -1,4 +1,4 @@
-@extends('layouts.profile')
+@extends('layouts.front')
 @section('title', 'コメント投稿')
 
 @section('content')

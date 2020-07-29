@@ -36,6 +36,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'NewsController@index');
-Route::get('news_search/', 'NewsController@store_search');
+Route::get('news_search/', 'NewsController@news_research');
 Route::get('/profile', 'ProfileController@index');
 

@@ -47,7 +47,7 @@
                         <ul class="navbar-nav ml-auto">
                         
                         <div class="front mx-auto">
-                        <form action="{{ action('NewsController@store_search') }}" method="get">
+                        <form action="{{ action('NewsController@news_research') }}" method="get">
                             <div class="front_search mx-auto">
                                 <input type="submit" class="btn btn-primary" value="検索">
                                 <input type="text" name="news_word" placeholder="検索キーワードを入力">
